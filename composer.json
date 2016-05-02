@@ -11,10 +11,7 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "yiisoft/yii2": ">=2.0.7",
-        "rhoone/yii2-rhoone": "dev-master",
-        "vistart/yii2-models": "^2.0.0"
+        "rhoone/yii2-rhoone": "dev-master"
     },
     "autoload": {
         "psr-4": {
