@@ -12,7 +12,9 @@
 
 namespace rhoone\library\job;
 
+use rhoone\library\targets\Target;
 use \rhoone\spider\job\BatchDownloadToMongoDBJob as baseJob;
+use yii\di\Instance;
 
 /**
  * Class BatchDownloadToMongoDBJob
@@ -20,5 +22,17 @@ use \rhoone\spider\job\BatchDownloadToMongoDBJob as baseJob;
  */
 class BatchDownloadToMongoDBJob extends baseJob
 {
+    /**
+     * @var null|array|Target
+     */
+    public $target;
 
+    /**
+     *
+     */
+    public function init()
+    {
+        parent::init();
+        $this->target = Instance::ensure($this->target, Target::class);
+    }
 }
