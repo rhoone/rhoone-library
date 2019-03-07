@@ -60,10 +60,8 @@ abstract class Target extends BaseObject
 
         $port = (($this->scheme == "https" && (string)$this->port == "443") ||
                  ($this->scheme == "http" && (string)$this->port == "80"))
-                 ? "" : $this->port;
-        if (strlen($port) > 0) {
-            $url = str_replace("{%port}", ":" . $port , $url);
-        }
+                 ? "" : ":" . $this->port;
+        $url = str_replace("{%port}", $port, $url);
 
         if (!empty($params) && is_array($params)) {
             $url .= '?';
