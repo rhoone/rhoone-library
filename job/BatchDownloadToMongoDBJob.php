@@ -26,13 +26,4 @@ class BatchDownloadToMongoDBJob extends baseJob
      * @var null|array|Target
      */
     public $target;
-
-    /**
-     *
-     */
-    public function init()
-    {
-        parent::init();
-        $this->target = Instance::ensure($this->target, Target::class);
-    }
 }
